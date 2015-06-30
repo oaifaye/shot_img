@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<listener>
+		<listener-class>com.init.StartUp</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>img_file_path</param-name>
+		<param-value>/usr/local/img_shot/</param-value>
+	</context-param>
+	<context-param>
+		<param-name>server_port</param-name>
+		<param-value>5556</param-value>
+	</context-param>
+	<context-param>
+		<param-name>shot_time_out</param-name>
+		<param-value>15000</param-value>
+	</context-param>
+	<context-param>
+		<param-name>shot_script_path</param-name>
+		<param-value>/usr/local/run-shot.sh</param-value>
+	</context-param>
+	
+
+	<servlet>
+		<description>GetUrlServlet</description>
+		<display-name>GetUrlServlet</display-name>
+		<servlet-name>GetUrlServlet</servlet-name>
+		<servlet-class>com.servlet.GetUrlServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetUrlServlet</servlet-name>
+		<url-pattern>/GetUrlServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description>AddFinishedServlet</description>
+		<display-name>AddFinishedServlet</display-name>
+		<servlet-name>AddFinishedServlet</servlet-name>
+		<servlet-class>com.servlet.AddFinishedServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddFinishedServlet</servlet-name>
+		<url-pattern>/AddFinishedServlet</url-pattern>
+	</servlet-mapping>
+
+</web-app>
