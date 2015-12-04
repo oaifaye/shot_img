@@ -66,7 +66,7 @@ public class ShotHandler implements HttpHandler{
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");//小写的mm表示的是分钟  
 		String dateStr = sdf.format(new Date());  
 		String filePath = new ParamHelper().getImgFilePath() + "/" + dateStr + "/";
-		String filePathName = filePath + UUID.randomUUID().toString().replaceAll("-","") + ".png";
+		String filePathName = filePath + UUID.randomUUID().toString().replaceAll("-","") + ".jpg";
 //		SeqHelper seqHelper = new SeqHelper();
 		//新建目录文件
 		new File(filePath).mkdirs();
